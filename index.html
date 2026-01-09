@@ -3,64 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaos Project - Hardcore Lineage 2 Server</title>
-    <meta name="description" content="Unique Lineage 2 High Rate Server. Chaos Augmentation, Rebirth System, Bounty Hunting. Join the hunt.">
+    <title>AllSaintsL2 - Hardcore Classic+ Server</title>
+    <meta name="description" content="AllSaintsL2 Classic+ Server. No Pay-to-Win, Semi-Hardcore, Armor Augmentation, Limitless Endgame. Join the revolution.">
     
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #c0392b; /* Krwista czerwień */
-            --accent: #f1c40f; /* Złoto L2 */
-            --dark: #121212; /* Tło */
-            --darker: #0a0a0a;
-            --text: #ecf0f1;
-            --gray: #7f8c8d;
+            --primary: #c0392b; /* Blood Red */
+            --accent: #f1c40f; /* Saintly Gold */
+            --dark: #0f0f0f; 
+            --darker: #050505;
+            --text: #e0e0e0;
+            --gray: #95a5a6;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--dark);
             color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         h1, h2, h3 {
             font-family: 'Cinzel', serif;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
-        
+
         /* --- NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.9);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #333;
-            backdrop-filter: blur(5px);
         }
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(192, 57, 43, 0.5);
+            color: var(--text);
         }
+        .logo span { color: var(--accent); }
 
         .nav-links a {
             margin-left: 30px;
@@ -68,9 +62,7 @@
             font-weight: 700;
             color: var(--gray);
         }
-
         .nav-links a:hover { color: var(--accent); }
-
         .btn-discord {
             background-color: #5865F2;
             padding: 8px 20px;
@@ -78,7 +70,7 @@
             color: white !important;
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -86,217 +78,148 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* ZMIEŃ LINK DO ZDJĘCIA TŁA PONIŻEJ */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://upload.wikimedia.org/wikipedia/en/2/23/Lineage_II_Box_Art.jpg'); 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--dark)), url('https://upload.wikimedia.org/wikipedia/en/2/23/Lineage_II_Box_Art.jpg');
             background-size: cover;
             background-position: center;
             padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 5px 15px black;
-        }
-
-        .hero h1 span { color: var(--primary); }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #bdc3c7;
-            max-width: 600px;
-        }
+        .hero h1 { font-size: 4rem; margin-bottom: 10px; text-shadow: 0 5px 20px black; }
+        .hero h2 { font-size: 1.5rem; color: var(--accent); margin-bottom: 20px; font-weight: 400; }
+        .hero p { max-width: 700px; color: #ccc; margin-bottom: 40px; font-size: 1.1rem; }
 
         .cta-button {
-            padding: 15px 40px;
-            background: linear-gradient(45deg, var(--primary), #8e44ad);
-            color: white;
+            padding: 15px 50px;
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
             font-family: 'Cinzel', serif;
             font-weight: bold;
             font-size: 1.2rem;
-            border: 2px solid transparent;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(192, 57, 43, 0.4);
         }
+        .cta-button:hover { background: var(--accent); color: var(--darker); box-shadow: 0 0 20px rgba(241, 196, 15, 0.4); }
 
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(192, 57, 43, 0.8);
-        }
-
-        /* --- FEATURES --- */
-        .features {
-            padding: 80px 50px;
-            background-color: var(--darker);
-            text-align: center;
-        }
-
-        .section-title {
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: var(--accent);
-        }
+        /* --- FEATURES GRID --- */
+        .features { padding: 100px 50px; background-color: var(--darker); text-align: center; }
+        .section-header { margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--text); }
+        .section-header p { color: var(--gray); margin-top: 10px; }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            gap: 40px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .card {
-            background: #1a1a1a;
-            padding: 40px 20px;
-            border: 1px solid #333;
+            background: #111;
+            padding: 40px 30px;
+            border: 1px solid #222;
             transition: 0.3s;
             position: relative;
-            overflow: hidden;
         }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        
+        .card h3 { margin: 15px 0; color: var(--text); font-size: 1.4rem; }
+        .card p { font-size: 0.95rem; color: var(--gray); }
+        
+        .icon { font-size: 40px; color: var(--primary); margin-bottom: 15px; }
+        .icon-gold { color: var(--accent); }
 
-        .card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: var(--gray);
-        }
-
-        .icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        /* --- PLAY NOW --- */
-        .connect {
-            padding: 80px 20px;
-            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        /* --- HIGHLIGHT BAR --- */
+        .highlight-bar {
+            background: var(--primary);
+            color: white;
             text-align: center;
+            padding: 40px 20px;
         }
-
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            max-width: 250px;
-        }
-
-        .step-number {
-            font-size: 3rem;
-            font-family: 'Cinzel', serif;
-            color: rgba(255,255,255,0.1);
-            font-weight: bold;
-        }
-
-        .step h4 { margin: 10px 0; color: var(--accent); }
+        .highlight-bar h3 { font-size: 2rem; margin-bottom: 10px; }
 
         /* --- FOOTER --- */
-        footer {
-            padding: 30px;
-            text-align: center;
-            background: black;
-            font-size: 0.8rem;
-            color: #555;
-            border-top: 1px solid #222;
-        }
+        footer { padding: 40px; text-align: center; background: #000; border-top: 1px solid #222; font-size: 0.8rem; color: #555; }
 
-        /* Mobile tweaks */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Uproszczone ukrywanie menu na mobile */
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">CHAOS<span style="color:white">PROJECT</span></div>
+        <div class="logo">ALLSAINTS<span>L2</span></div>
         <div class="nav-links">
-            <a href="#features">Server Features</a>
-            <a href="#connect">How to Play</a>
-            <a href="https://discord.gg/JwddKzCCrD" target="_blank" class="btn-discord">Join Discord</a>
+            <a href="#features">Features</a>
+            <a href="#about">Philosophy</a>
+            <a href="LINK_DO_DISCORDA" target="_blank" class="btn-discord">Join Discord</a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>EMBRACE THE <span>CHAOS</span></h1>
-        <p>A hardcore Lineage 2 experience. Hunt the weak, evade the strong, and rewrite your destiny with our unique Chaos System.</p>
-        <a href="#connect" class="cta-button">START YOUR JOURNEY</a>
+        <h1>TRUE CLASSIC+ EXPERIENCE</h1>
+        <h2>LOW-MID RATE • HIGHLY CUSTOMIZED • NO PAY-TO-WIN</h2>
+        <p>Welcome to <strong>AllSaintsL2</strong>. We are bringing back the thrill of risk. 
+        De-leveling, item drops, and infinite progression. A server for those who miss the adrenaline.</p>
+        <a href="LINK_DO_DISCORDA" class="cta-button">JOIN THE PROJECT</a>
     </section>
 
     <section id="features" class="features">
-        <h2 class="section-title">Unique Mechanics</h2>
+        <div class="section-header">
+            <h2>SERVER FEATURES</h2>
+            <p>We are just starting. Here is what makes us unique.</p>
+        </div>
+
         <div class="grid">
-            
+            <div class="card" style="border-color: var(--accent);">
+                <div class="icon icon-gold">💎</div>
+                <h3>NO Premium / NO Cash Shop</h3>
+                <p>We mean it. No premium accounts, no pay-to-win items. Your wallet has no power here. Only your skill and dedication define your strength.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💀</div>
+                <h3>Semi-Hardcore Penalty</h3>
+                <p>Death matters again. You can <strong>de-level</strong> and you can <strong>drop items</strong> upon death. High risk, high adrenaline PvP and PvE.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🛡️</div>
+                <h3>Armor Augmentation</h3>
+                <p>Not just weapons. Use our custom Chaos Board to augment your Armor pieces. Identify stats, reroll them, and build a truly unique character.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">∞</div>
+                <h3>Limitless Potential</h3>
+                <p>Endgame is just the beginning. Gain unobtainable power through <strong>Subclasses</strong> and the <strong>Rebirth System</strong>. There is no cap on how strong you can become.</p>
+            </div>
+
             <div class="card">
                 <div class="icon">⚔️</div>
-                <h3>Chaos Augmentation</h3>
-                <p>Forget standard augments. Use our custom <strong>Chaos Board</strong> to identify and reroll stats on your gear. High risk, legendary rewards.</p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🩸</div>
-                <h3>Rebirth System</h3>
-                <p>Accumulated too much Karma? Pay the price. Reset your level to 40, cleanse your sins, and rise again stronger than before.</p>
-            </div>
-
-            <div class="card">
-                <div class="icon">☠️</div>
-                <h3>Live Bounty Hunting</h3>
-                <p>No one hides. The server's <strong>Top Killer</strong> is marked on the global map with the Zariche Icon. Hunt them down or become the target.</p>
+                <h3>Balanced PK System</h3>
+                <p>Being a Player Killer carries weight. High risk, but high reward mechanisms. Utilize our Bounty Hunter system to track down the server's most wanted.</p>
             </div>
 
              <div class="card">
-                <div class="icon">💍</div>
-                <h3>Accessory Evolution</h3>
-                <p>Upgrade your bracelets and belts through multiple tiers directly in the Community Board. Custom stats for true warriors.</p>
+                <div class="icon">🤖</div>
+                <h3>Smart Auto-Hunt</h3>
+                <p>A basic assist system that supports the player, it doesn't play <i>for</i> the player. Grinding is easier, but you must still command your character.</p>
             </div>
-
         </div>
     </section>
 
-    <section id="connect" class="connect">
-        <h2 class="section-title">How to Connect</h2>
-        <p>We keep it simple. No complex registrations.</p>
-        
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">01</div>
-                <h4>Download Patch</h4>
-                <p>Download our system patch and extract it to your Lineage 2 root folder.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">02</div>
-                <h4>Auto Accounts</h4>
-                <p>No website registration needed. Just type your desired Login & Password in the game client.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">03</div>
-                <h4>Join Discord</h4>
-                <p>Join our community to track server status, bounty alerts, and updates.</p>
-            </div>
-        </div>
-
-        <br><br>
-        <a href="LINK_DO_PLIKU_LUB_DISCORDA" class="cta-button">DOWNLOAD FILES</a>
-    </section>
+    <div class="highlight-bar">
+        <h3>PROJECT IN DEVELOPMENT</h3>
+        <p>We are building this together with the community. Your voice matters.</p>
+        <br>
+        <a href="LINK_DO_DISCORDA" style="text-decoration: underline;">JOIN OUR DISCORD</a>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Chaos Project. Lineage II is a trademark of NCSoft. This is a private fan server.</p>
+        <p>&copy; 2026 AllSaintsL2. Lineage II is a trademark of NCSoft. This is a private fan project.</p>
     </footer>
 
 </body>
